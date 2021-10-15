@@ -16,11 +16,13 @@ if not cpx.switch:
                     cpx.red_led = True
                     x, y, z = cpx.acceleration
                     g = math.sqrt(x * x + y * y + z * z)
-                    readings.append(g / 1000)
+                    readings.append(g)
                     readingsCount += 1
                     time.sleep(0.05)
                     cpx.red_led = False
+                print(readings)
                 file.write(str(readings))
         else:
             print("Not logging data. Flip the switch and then hit reset")
             time.sleep(3)
+
